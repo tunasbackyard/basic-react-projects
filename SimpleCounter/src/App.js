@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Button from "./Button";
 
 function App() {
   const [number, setNumber] = useState(0);
@@ -7,30 +8,24 @@ function App() {
     <div className="wrapper">
       <h1 className="number">{number}</h1>
       <div className="btn-container">
-        <button
-          className="btn"
-          onClick={() => {
+        <Button
+          handler={() => {
             setNumber(number + 1);
           }}
-        >
-          increase
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
+          text={"increase"}
+        />
+        <Button
+          handler={() => {
             setNumber(number - 1);
           }}
-        >
-          decrease
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
+          text={"decrease"}
+        />
+        <Button
+          handler={() => {
             setNumber(0);
           }}
-        >
-          reset
-        </button>
+          text={"reset"}
+        />
       </div>
     </div>
   );
