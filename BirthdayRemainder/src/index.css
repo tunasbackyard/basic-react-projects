@@ -13,9 +13,10 @@ body {
 .wrapper {
   width: fit-content;
   margin: 2em auto;
-  padding: 2em 5em;
+  padding: 2em 3em;
   background-color: rgb(226, 216, 237);
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .item {
@@ -24,6 +25,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   margin: 1em 0;
+  padding-right: 5em;
 }
 
 .item img {
