@@ -19,7 +19,7 @@ function App() {
   }
 
   useEffect(() => {
-    //fetchTours();
+    fetchTours();
   }, []);
 
   if (isLoading) return <div>Loading...</div>;

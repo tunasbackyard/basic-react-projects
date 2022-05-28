@@ -18,6 +18,7 @@ body {
 .tour {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: fit-content;
   margin: 3em 0;
   padding: 2em 3em;
@@ -28,6 +29,7 @@ body {
 
 .tour div {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   margin: 1.5em 0;
@@ -37,4 +39,31 @@ body {
   width: 100%;
   object-fit: contain;
   border-radius: 5px;
+}
+
+.tour__info {
+  text-align: justify;
+}
+
+.more__btn {
+  margin-left: 0.25em;
+  border: none;
+  background: none;
+  color: rgb(53, 91, 185);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tour__btn {
+  width: fit-content;
+  margin-top: 2em;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  border: none;
+  color: azure;
+  border-radius: 20px;
+  background-color: rgb(153, 19, 153);
+}
+.tour__btn:hover {
+  background-color: rgb(111, 15, 111);
 }
