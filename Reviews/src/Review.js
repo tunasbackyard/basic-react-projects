@@ -3,7 +3,7 @@ import { FaQuoteRight } from "react-icons/fa";
 
 const Review = ({ id, name, job, image, text }) => {
   return (
-    <section className="review">
+    <article className="review">
       <div className="review__quote-icon-container">
         <FaQuoteRight />
       </div>
@@ -12,7 +12,7 @@ const Review = ({ id, name, job, image, text }) => {
         {name} - {job}
       </h3>
       <p className="review__text">{text}</p>
-    </section>
+    </article>
   );
 };
 
