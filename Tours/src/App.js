@@ -23,13 +23,18 @@ function App() {
     fetchTours();
   }, []);
 
+  function removeTour(id) {
+    const filteredTours = tours.filter((tour) => tour.id !== id);
+    setTours(filteredTours);
+  }
+
   if (isLoading) return <Loading />;
 
   return (
     <section className="wrapper">
       <h1>Tours</h1>
       {tours.map((tour) => {
-        return <Tour key={tour.id} {...tour} />;
+        return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
       })}
     </section>
   );
