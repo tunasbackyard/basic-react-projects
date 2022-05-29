@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loading from "./Loading";
 import Tour from "./Tour";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     fetchTours();
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
 
   return (
     <section className="wrapper">

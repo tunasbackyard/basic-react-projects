@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  margin: 5em auto;
+  font-size: 1.2rem;
+}
+
+.fa-spinner {
+  animation: spin-animation 5s ease forwards;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  75% {
+    transform: rotate(540deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
