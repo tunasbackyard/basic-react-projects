@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Loading from "./Loading";
+import Loading from "./Loader";
 import Tour from "./Tour";
 
 function App() {

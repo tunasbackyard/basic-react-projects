@@ -2,13 +2,13 @@ import React from "react";
 
 import "./loader.css";
 
-function Loading() {
+function Loader() {
   return (
-    <div>
+    <div className="loader__container">
       <i className="fa-solid fa-spinner"></i>
       Loading
     </div>
   );
 }
 
-export default Loading;
+export default Loader;
