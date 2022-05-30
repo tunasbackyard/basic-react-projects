@@ -1,10 +1,13 @@
 import React from "react";
 import Item from "./Item";
+import data from "./data";
 
 const List = () => {
   return (
     <div className="list">
-      <Item />
+      {data.map((item) => {
+        return <Item key={item.id} {...item} />;
+      })}
     </div>
   );
 };
