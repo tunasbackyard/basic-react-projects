@@ -1,8 +1,7 @@
 import React from "react";
 import Item from "./Item";
-import data from "./data";
 
-const List = () => {
+const List = ({ data }) => {
   return (
     <div className="list">
       {data.map((item) => {
