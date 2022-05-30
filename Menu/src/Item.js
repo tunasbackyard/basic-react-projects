@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({ id, title, category, price, img, desc }) => {
+const Item = ({ title, price, img, desc }) => {
   return (
     <article className="list__item">
       <div className="item__img-container">
