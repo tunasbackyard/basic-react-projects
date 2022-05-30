@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Filter = () => {
-  return (
-    <div>Filter</div>
-  )
-}
+  return <button className="filters__btn"></button>;
+};
 
-export default Filter
+export default Filter;
