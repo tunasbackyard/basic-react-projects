@@ -1,4 +1,4 @@
-export const bookData = [
+const data = [
   {
     id: 1,
     imageLink:
@@ -28,3 +28,5 @@ export const bookData = [
     author: "Franz Kafka",
   },
 ];
+
+export default data;

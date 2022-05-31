@@ -4,10 +4,10 @@ function Book({ imageLink, title, author }) {
   return (
     <article className="book">
       <img src={imageLink} alt="book-image" />
-      <div className="book-meta">
+      <summary className="book-meta">
         <h2>{title}</h2>
         <p>{author}</p>
-      </div>
+      </summary>
       <button className="order-btn">Order Now</button>
     </article>
   );
