@@ -1,10 +1,10 @@
 import React from "react";
 
-const ItemInfo = () => {
+const ItemInfo = ({ text }) => {
   return (
     <div className="item__info">
-      <i class="fa-solid fa-angles-right"></i>
-      <p>ItemInfo</p>
+      <i className="fa-solid fa-angles-right"></i>
+      <p>{text}</p>
     </div>
   );
 };
