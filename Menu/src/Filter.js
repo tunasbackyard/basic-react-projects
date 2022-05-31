@@ -1,14 +1,14 @@
 import React from "react";
 
-const Filter = ({ text, changeFilter }) => {
+const Filter = ({ filter, changeFilter }) => {
   return (
     <button
       className="filters__btn"
       onClick={() => {
-        changeFilter(text);
+        changeFilter(filter);
       }}
     >
-      {text}
+      {filter}
     </button>
   );
 };
