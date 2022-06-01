@@ -9,7 +9,7 @@ main {
   flex-direction: column;
   margin-top: 2em;
   align-items: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 1.5rem;
 }
 
@@ -22,7 +22,6 @@ main {
 
 .question__container {
   padding: 1.2em;
-  padding-bottom: 0.2em;
   border-bottom: 2px solid rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -45,12 +44,6 @@ main {
 
 .question__answer {
   margin-top: 1em;
-  padding-bottom: 0.5em;
   text-align: left;
   font-weight: 600;
-}
-
-.question__icon--rotate {
-  transition: all 0.5s ease;
-  transform: rotate(-180deg);
 }

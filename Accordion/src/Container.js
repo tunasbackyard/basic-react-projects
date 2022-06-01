@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Container = ({ id, title, info }) => {
+const Container = ({ title, info }) => {
   const [isQuestionOpened, setIsQuestionOpened] = useState(false);
 
   return (
@@ -12,15 +12,13 @@ const Container = ({ id, title, info }) => {
         }}
       >
         <h4 className="question__text">{title}</h4>
-        <i
-          className={
-            isQuestionOpened
-              ? "fa-solid fa-angle-down question__icon--rotate"
-              : "fa-solid fa-angle-down"
-          }
-        ></i>
+        {isQuestionOpened ? (
+          <i className="fa-solid fa-angle-up"></i>
+        ) : (
+          <i className="fa-solid fa-angle-down"></i>
+        )}
       </div>
-      <p className="question__answer">{isQuestionOpened && info}</p>
+      {isQuestionOpened && <p className="question__answer">{info}</p>}
     </div>
   );
 };
