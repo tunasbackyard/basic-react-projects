@@ -2,11 +2,11 @@ import React from "react";
 
 const Item = ({ current }) => {
   return (
-    <div className="item">
-      <div>
+    <article className="item">
+      <summary>
         <h3 className="item__title">{current?.title ?? "undefined"}</h3>
         <span className="item__date">{current?.dates ?? "undefined"}</span>
-      </div>
+      </summary>
       <span className="item__company">{current?.company ?? "undefined"}</span>
       <ul className="item__list">
         <li>
@@ -19,7 +19,7 @@ const Item = ({ current }) => {
           <p className="item__text">{current?.duties[2] ?? "undefined"}</p>
         </li>
       </ul>
-    </div>
+    </article>
   );
 };
 
