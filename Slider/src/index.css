@@ -7,6 +7,8 @@
 main {
   margin-top: 5em;
   text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  color: rgb(47, 58, 67);
 }
 
 main h1 {
@@ -20,36 +22,69 @@ main h1 {
 .container-vertical {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: row;
 }
 
 .item {
-  padding: 1em;
+  padding: 2em 1.5em 3em;
+  box-shadow: rgba(49, 52, 55, 0.3) 0px 1px 2px 0px,
+    rgba(86, 91, 95, 0.15) 0px 2px 6px 2px;
+  border-radius: 10px;
 }
 
 .item__title {
-  font-size: 2rem;
+  position: relative;
+  text-transform: capitalize;
   margin-left: 1em;
+  font-size: 2rem;
+}
+
+.item__title::after {
+  position: absolute;
+  top: 1.4em;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: min-content;
+  border: 2px solid rgb(129, 127, 255);
+  background-color: rgb(129, 127, 255);
+  border-radius: 15px;
 }
 
 .item__subtitle {
   font-size: 1.3rem;
+  text-transform: capitalize;
+  color: rgb(63, 73, 82);
 }
 
 .item__img {
-  width: 20%;
+  width: 30%;
+  border-radius: 10%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .item__text {
   margin-top: 2em;
-  margin-left: 1em;
-  font-size: 1.5rem;
+  margin-left: 2em;
+  font-size: 1.2rem;
   text-align: justify;
+  color: rgb(80, 101, 118);
 }
 
 .btn {
+  cursor: pointer;
   width: fit-content;
   margin: 1em auto;
-  font-size: 2rem;
+  padding: 0.2em 0.4em;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  border-radius: 15px;
+  color: azure;
+  background-color: rgb(129, 127, 255);
+}
+
+.btn:hover {
+  background-color: rgb(112, 110, 236);
 }
