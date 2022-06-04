@@ -23,7 +23,7 @@ const App = () => {
             handleIndex(() => index + 1);
           }}
         >
-          <i class="fa-solid fa-angle-up"></i>
+          <i className="fa-solid fa-angle-up"></i>
         </button>
         <article className="item container-vertical">
           <img className="item__img" src={current.image} alt="" />
@@ -41,7 +41,7 @@ const App = () => {
             handleIndex(() => index - 1);
           }}
         >
-          <i class="fa-solid fa-angle-down"></i>
+          <i className="fa-solid fa-angle-down"></i>
         </button>
       </section>
     </main>
