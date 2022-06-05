@@ -8,72 +8,36 @@ body {
   font-family: "Segoe UI", sans-serif;
 }
 
-.section {
+main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 95vw;
   margin: 5em auto;
+  width: 95vw;
 }
 
-.section-center {
-  position: relative;
+.wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 5em;
+}
+
+.slider {
+  position: relative;
   margin: 0 auto;
-  margin-top: 4em;
-  width: 80vw;
-  height: 450px;
+  width: 70vw;
+  height: 300px;
   text-align: center;
   overflow: hidden;
-}
-.person-img {
-  border-radius: 50%;
-  margin-bottom: 1em;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-article h4 {
-  text-transform: uppercase;
-  margin-bottom: 0.25em;
-}
-.title {
-  text-transform: capitalize;
-  margin-bottom: 0.75em;
-}
-.text {
-  max-width: 35em;
-  margin: 0 auto;
-  margin-top: 2em;
-  line-height: 2;
-}
-.prev,
-.next {
-  position: absolute;
-  top: 200px;
-  transform: translateY(-50%);
-  width: 1.25em;
-  height: 1.25em;
-  display: grid;
-  place-items: center;
-  border-color: transparent;
-  font-size: 1em;
-  cursor: pointer;
-  z-index: 2;
 }
 
 article {
   position: absolute;
   margin: 0 1em;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   opacity: 0;
-  transition: var(--transition);
+  transition: all 0.9s ease;
 }
 article.activeSlide {
   opacity: 1;
@@ -84,4 +48,17 @@ article.lastSlide {
 }
 article.nextSlide {
   transform: translateX(100%);
+}
+
+.person-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.btn {
+  font-size: 2rem;
+  background: none;
+  font-weight: 100;
+  border: none;
 }
