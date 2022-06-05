@@ -3,11 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Segoe UI", sans-serif;
+  background-color: rgb(239, 248, 248);
 }
-
 main {
   display: flex;
   flex-direction: column;
@@ -15,14 +14,12 @@ main {
   margin: 5em auto;
   width: 95vw;
 }
-
 .wrapper {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   margin-top: 5em;
 }
-
 .slider {
   position: relative;
   margin: 0 auto;
@@ -31,11 +28,15 @@ main {
   text-align: center;
   overflow: hidden;
 }
-
 article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   margin: 0 1em;
   width: 100%;
+  text-align: center;
+  color: rgb(26, 28, 41);
   opacity: 0;
   transition: all 0.9s ease;
 }
@@ -50,15 +51,39 @@ article.nextSlide {
   transform: translateX(100%);
 }
 
-.person-img {
+.review__img {
+  margin-bottom: 3em;
   width: 150px;
   height: 150px;
+  border-radius: 10px;
   object-fit: cover;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.review__name {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.review__title {
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+
+.review__text {
+  max-width: 850px;
 }
 
 .btn {
+  cursor: pointer;
   font-size: 2rem;
   background: none;
   font-weight: 100;
   border: none;
+}
+
+.btn:hover {
+  color: rgba(237, 4, 151, 0.4);
 }
