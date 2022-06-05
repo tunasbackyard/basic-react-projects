@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import data from "./data";
 
 function App() {
-  const [reviewArray, setReviewArray] = useState(data);
+  const [reviewArray] = useState(data);
   const [index, setIndex] = useState(0);
-
-  // useEffect(() => {}, [index]);
 
   function handleIndex(fn) {
     let index = fn();
@@ -14,44 +12,44 @@ function App() {
     if (index < 0) index = reviewArray.length - 1;
     setIndex(index);
   }
+  const isActiveSlide = (reviewIx) => reviewIx === index;
+  const isLastSlide = (reviewIx) => reviewIx === index - 1;
+  const isEndOfTheSlide = (reviewIx) =>
+    index === 0 && reviewIx === reviewArray.length - 1;
 
   return (
-    <section className="section">
-      <div className="title">
-        <h2>reviews</h2>
-      </div>
-      <div className="section-center">
+    <main>
+      <div className="wrapper">
         <button
-          className="prev"
+          className="btn"
           onClick={() => {
             handleIndex(() => index - 1);
           }}
         >
           <FiChevronLeft />
         </button>
-        {reviewArray.map((review, reviewIx) => {
-          const { id, image, name, title, quote } = review;
-          let position = "nextSlide";
-          if (reviewIx === index) {
-            position = "activeSlide";
-          }
-          if (
-            reviewIx === index - 1 ||
-            (index === 0 && reviewIx === reviewArray.length - 1)
-          ) {
-            position = "lastSlide";
-          }
-          return (
-            <article className={position} key={id}>
-              <img src={image} alt={name} className="person-img" />
-              <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
-            </article>
-          );
-        })}
+        <div className="slider">
+          {reviewArray.map((review, reviewIx) => {
+            const { id, image, name, title, quote } = review;
+            let position = "nextSlide";
+
+            if (isActiveSlide(reviewIx)) position = "activeSlide";
+
+            if (isLastSlide(reviewIx) || isEndOfTheSlide(reviewIx))
+              position = "lastSlide";
+
+            return (
+              <article className={position} key={id}>
+                <img src={image} alt={name} className="review__img" />
+                <h4 className="review__name">{name}</h4>
+                <span className="review__title">{title}</span>
+                <p className="review__text">{quote}</p>
+              </article>
+            );
+          })}
+        </div>
         <button
-          className="next"
+          className="btn"
           onClick={() => {
             handleIndex(() => index + 1);
           }}
@@ -59,7 +57,7 @@ function App() {
           <FiChevronRight />
         </button>
       </div>
-    </section>
+    </main>
   );
 }
 
