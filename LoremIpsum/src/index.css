@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  margin: 5em auto;
+  font-family: "Segoe UI", sans-serif;
+  text-align: justify;
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.input {
+  padding: 1em;
+  font-size: 1.1rem;
+}
+
+.text {
+  max-width: 70%;
+  margin: 1em 0;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+}
