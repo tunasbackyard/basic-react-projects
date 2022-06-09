@@ -64,6 +64,14 @@ body {
   transition: all 0.5s ease;
 }
 
+.form__message {
+  margin-bottom: 1em;
+  padding: 0.2em 2em;
+  font-weight: 600;
+  background-color: rgba(37, 238, 15, 0.671);
+  border-radius: 5px;
+}
+
 .form__list {
   width: 100%;
   list-style: none;

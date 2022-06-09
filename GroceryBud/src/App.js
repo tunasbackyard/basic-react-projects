@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Item from "./Item";
 
 const App = () => {
   const [itemArray, setItemArray] = useState([]);
   const [text, setText] = useState();
+  const [isAdded, setIsAdded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 1000);
+    return clearTimeout;
+  }, [isAdded]);
 
   return (
     <main>
@@ -28,12 +36,16 @@ const App = () => {
               onClick={() => {
                 const id = new Date().valueOf();
                 itemArray.push({ id, text });
+                setIsAdded(true);
                 setText("");
               }}
             >
               Add
             </button>
           </div>
+          {isAdded && (
+            <div className="form__message">Item successfully added</div>
+          )}
           <ul className="form__list">
             {itemArray.map((item) => (
               <Item
