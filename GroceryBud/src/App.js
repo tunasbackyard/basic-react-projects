@@ -5,6 +5,8 @@ const App = () => {
   const [itemArray, setItemArray] = useState([]);
   const [text, setText] = useState();
   const [isAdded, setIsAdded] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentlyEditedItemID, setCurrentlyEditedItemID] = useState();
 
   useEffect(() => {
     setTimeout(() => {
@@ -12,6 +14,8 @@ const App = () => {
     }, 1000);
     return clearTimeout;
   }, [isAdded]);
+
+  function editItem() {}
 
   return (
     <main>
@@ -34,13 +38,22 @@ const App = () => {
             <button
               className="form__input-btn"
               onClick={() => {
-                const id = new Date().valueOf();
-                itemArray.push({ id, text });
-                setIsAdded(true);
-                setText("");
+                if (isEditing) {
+                  const selectedItem = itemArray.find(
+                    (item) => item.id == currentlyEditedItemID
+                  );
+                  selectedItem.text = text;
+                  setIsEditing(false);
+                  setText("");
+                } else {
+                  const id = new Date().valueOf();
+                  itemArray.push({ id, text });
+                  setIsAdded(true);
+                  setText("");
+                }
               }}
             >
-              Add
+              {isEditing ? "Edit" : "Add"}
             </button>
           </div>
           {isAdded && (
@@ -53,6 +66,10 @@ const App = () => {
                 {...item}
                 removeItem={(id) => {
                   setItemArray(itemArray.filter((item) => item.id !== id));
+                }}
+                editItem={(id) => {
+                  setIsEditing(true);
+                  setCurrentlyEditedItemID(id);
                 }}
               />
             ))}
