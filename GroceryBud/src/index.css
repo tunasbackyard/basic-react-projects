@@ -68,7 +68,9 @@ body {
   margin-bottom: 1em;
   padding: 0.2em 2em;
   font-weight: 600;
-  background-color: rgba(37, 238, 15, 0.671);
+  letter-spacing: 0.3px;
+  color: green;
+  background-color: rgb(145, 224, 136);
   border-radius: 5px;
 }
 
