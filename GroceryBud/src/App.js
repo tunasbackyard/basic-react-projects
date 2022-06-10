@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import Item from "./Item";
 
 const App = () => {
-  const [itemArray, setItemArray] = useState([]);
+  const [itemArray, setItemArray] = useState(getLocalStorage());
   const [text, setText] = useState();
   const [isAdded, setIsAdded] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [currentlyEditedItemID, setCurrentlyEditedItemID] = useState();
+
+  function getLocalStorage() {
+    return JSON.parse(localStorage.getItem("array")) || [];
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -15,7 +19,9 @@ const App = () => {
     return clearTimeout;
   }, [isAdded]);
 
-  function editItem() {}
+  useEffect(() => {
+    localStorage.setItem("array", JSON.stringify(itemArray));
+  }, [itemArray, isAdded, isEditing]);
 
   return (
     <main>
