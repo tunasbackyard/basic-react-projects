@@ -6,6 +6,13 @@ const App = () => {
   const navContainer = useRef();
   const linksContainer = useRef();
 
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 750) {
+      linksContainer.current.classList.remove("container--hidden");
+      navContainer.current.classList.remove("container--hidden");
+    }
+  });
+
   function handleDisplay(isShown) {
     if (isShown) {
       linksContainer.current.classList.remove("container--active");

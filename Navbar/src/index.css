@@ -106,6 +106,10 @@ a {
     width: 100%;
   }
 
+  .links {
+    width: 100%;
+  }
+
   .nav__list {
     flex-direction: column;
   }
