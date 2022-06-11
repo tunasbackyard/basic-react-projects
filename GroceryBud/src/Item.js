@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({ id, text, removeItem, editItem }) => {
+const Item = ({ id, text, removeItem, getEditedItemID }) => {
   return (
     <li className="form__list__item">
       <span className="item__name">{text}</span>
@@ -9,7 +9,7 @@ const Item = ({ id, text, removeItem, editItem }) => {
           className="item__icon icon-edit fa-regular fa-pen-to-square"
           title="edit"
           onClick={() => {
-            editItem(id);
+            getEditedItemID(id);
           }}
         ></i>
         <i
