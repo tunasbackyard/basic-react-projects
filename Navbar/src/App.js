@@ -1,4 +1,5 @@
 import React from "react";
+import { navLinks, socialLinks } from "./data";
 
 const App = () => {
   return (
@@ -10,29 +11,33 @@ const App = () => {
       </div>
       <nav className="nav container">
         <ul className="nav__list">
-          <li className="nav__list__item">Home</li>
-          <li className="nav__list__item">About</li>
-          <li className="nav__list__item">Projects</li>
-          <li className="nav__list__item">Contact</li>
-          <li className="nav__list__item">Profile</li>
+          {navLinks.map((link) => (
+            <li className="nav__list__item" key={link.id}>
+              <a className="nav__list__item__link" href={link.url}>
+                {link.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
       <div className="links container">
         <ul className="links__list">
-          <li className="links__list__item">
-            <i class="fa-brands fa-facebook-square"></i>
-          </li>
-          <li className="links__list__item">
-            <i class="fa-brands fa-instagram-square"></i>
-          </li>
-          <li className="links__list__item">
-            <i class="fa-brands fa-github-square"></i>
-          </li>
-          <li className="links__list__item">
-            <i class="fa-brands fa-linkedin"></i>
-          </li>
+          {socialLinks.map((link) => (
+            <li className="links__list__item" key={link.id}>
+              <a
+                className="links__list__item__link"
+                href={link.url}
+                target="_blank"
+              >
+                <i className={link.icon}></i>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
+      <button className="toggle-btn">
+        <i className="fa-solid fa-bars"></i>
+      </button>
     </header>
   );
 };
