@@ -7,7 +7,8 @@ const Navigation = ({ navLinks }) => {
         {navLinks.map((link) => (
           <li className="navigation__list__item" key={link.id}>
             <a className="navigation__list__item__link" href="">
-              {link.text}
+              <i className={link.icon}></i>
+              <p>{link.text}</p>
             </a>
           </li>
         ))}
