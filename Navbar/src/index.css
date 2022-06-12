@@ -30,6 +30,13 @@ a {
   padding: 1em 2em;
 }
 
+.container {
+  transform: translate(0);
+  transition: all 0.2s ease;
+  width: fit-content;
+  height: fit-content;
+}
+
 .logo__title {
   font-family: "Lobster", cursive;
   font-size: 1.7rem;
@@ -42,13 +49,6 @@ a {
 .container--hidden {
   transform: translateY(-1000%);
   transition: all 0.2s ease;
-}
-
-.container--active {
-  transform: translate(0);
-  transition: all 0.2s ease;
-  width: fit-content;
-  height: fit-content;
 }
 
 .nav__list,
