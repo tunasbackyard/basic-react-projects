@@ -3,26 +3,31 @@ export const navLinks = [
     id: 1,
     url: "/",
     text: "home",
+    icon: "fa-solid fa-house",
   },
   {
     id: 2,
     url: "/team",
     text: "team",
+    icon: "fa-solid fa-people-group",
   },
   {
     id: 3,
     url: "/projects",
     text: "projects",
+    icon: "fa-solid fa-briefcase",
   },
   {
     id: 4,
     url: "/calendar",
     text: "calendar",
+    icon: "fa-solid fa-calendar",
   },
   {
     id: 5,
     url: "/documents",
     text: "documents",
+    icon: "fa-solid fa-file",
   },
 ];
 
