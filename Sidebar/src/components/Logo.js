@@ -3,9 +3,10 @@ import React from "react";
 const Logo = () => {
   return (
     <div className="logo container">
-      <h2 className="logo__title">
+      <h3 className="logo__title">
         The<span>Company</span>
-      </h2>
+      </h3>
+      <i className="fa-solid fa-bars"></i>
     </div>
   );
 };
