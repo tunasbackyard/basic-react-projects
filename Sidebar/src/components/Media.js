@@ -1,6 +1,7 @@
 import React from "react";
 
-const Media = ({ mediaLinks }) => {
+const Media = ({ display, mediaLinks }) => {
+  if (display === false) return;
   return (
     <div className="media container">
       <ul className="media__list">

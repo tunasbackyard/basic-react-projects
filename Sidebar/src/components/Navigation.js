@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navigation = ({ navLinks }) => {
+const Navigation = ({ display, navLinks }) => {
   return (
     <nav className="navigation container">
       <ul className="navigation__list">
@@ -8,7 +8,7 @@ const Navigation = ({ navLinks }) => {
           <li className="navigation__list__item" key={link.id}>
             <a className="navigation__list__item__link" href="">
               <i className={link.icon}></i>
-              <p>{link.text}</p>
+              {display && <p>{link.text}</p>}
             </a>
           </li>
         ))}
