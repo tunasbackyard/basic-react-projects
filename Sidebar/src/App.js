@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-import Logo from "./components/Logo";
-import Media from "./components/Media";
-import Navigation from "./components/Navigation";
-
+import Modal from "./components/Modal";
 import "./index.css";
-import { mediaLinks, navLinks } from "./data";
+import Sidebar from "./Sidebar";
 
 const App = () => {
-  const [display, setDisplay] = useState(true);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="sidebar">
-      <Logo display={display} setDisplay={setDisplay} />
-      <Navigation display={display} navLinks={navLinks} />
-      <Media display={display} mediaLinks={mediaLinks} />
-    </section>
+    <main>
+      <Sidebar />
+      <button
+        className="modal-btn"
+        onClick={() => {
+          setIsModalOpen(!isModalOpen);
+        }}
+      >
+        Show Modal
+      </button>
+      {isModalOpen && (
+        <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      )}
+    </main>
   );
 };
 
