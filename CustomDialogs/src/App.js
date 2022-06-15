@@ -6,7 +6,7 @@ import List from "./components/List";
 const App = () => {
   const [people, setPeople] = useState([]);
   return (
-    <div>
+    <main>
       <Dialog />
       <Form
         addPerson={(newPerson) => {
@@ -14,7 +14,7 @@ const App = () => {
         }}
       />
       <List array={people} />
-    </div>
+    </main>
   );
 };
 

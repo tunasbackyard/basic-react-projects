@@ -17,6 +17,7 @@ const Form = ({ addPerson }) => {
           onChange={(e) => {
             setPersonName(e.target.value);
           }}
+          placeholder="type a name"
         />
         <button
           className="form__input__btn"
@@ -25,6 +26,7 @@ const Form = ({ addPerson }) => {
               id: new Date().getTime().toString(),
               name: personName,
             });
+            setPersonName("");
           }}
         >
           Join
