@@ -1,3 +1,10 @@
+:root {
+  --background: rgb(14, 13, 13);
+  --text-color: rgb(184, 184, 184);
+  --green: rgb(47, 233, 106);
+  --darker-green: rgb(42, 208, 95);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +13,8 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background);
 }
 
 main {
@@ -24,12 +33,15 @@ main {
   line-height: 30px;
   margin-bottom: 0.5em;
   padding: 0 0.2em;
-  border-bottom: 1px solid black;
+  color: var(--text-color);
+  text-transform: capitalize;
+  border-bottom: 1px solid var(--green);
   font-size: 1.1rem;
 }
 
 .form__input__field::placeholder {
   font-size: 0.9rem;
+  text-transform: none;
 }
 
 .form__input__btn {
@@ -37,10 +49,12 @@ main {
   background: none;
   border: none;
   font-size: 1.1rem;
+  background-color: var(--green);
 }
 
 .form__input__btn:hover {
   cursor: pointer;
+  background-color: var(--darker-green);
 }
 
 .dialog {
@@ -56,9 +70,11 @@ main {
 
 .list {
   margin-top: 2em;
-  list-style: none;
+  list-style: circle;
+  text-align: center;
 }
 
 .list__item {
   margin: 0.5em 0;
+  text-transform: capitalize;
 }
