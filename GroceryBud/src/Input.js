@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Dialog from "./Dialog";
 
 const Input = ({ createNewItem, editItem, isEditing }) => {
   const [text, setText] = useState();
@@ -15,9 +16,11 @@ const Input = ({ createNewItem, editItem, isEditing }) => {
       <button
         className="form__input-btn"
         onClick={() => {
-          if (isEditing) editItem(text);
-          else createNewItem(text);
-          setText("");
+          if (text) {
+            if (isEditing) editItem(text);
+            else createNewItem(text);
+            setText("");
+          }
         }}
       >
         {isEditing ? "Edit" : "Add"}
