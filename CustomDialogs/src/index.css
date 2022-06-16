@@ -1,8 +1,8 @@
 :root {
-  --background: rgb(14, 13, 13);
-  --text-color: rgb(184, 184, 184);
-  --green: rgb(47, 233, 106);
-  --darker-green: rgb(42, 208, 95);
+  --background: hsl(0, 4%, 13%);
+  --text-color: hsl(0, 0%, 72%);
+  --green: hsl(139, 81%, 55%);
+  --darker-green: hsl(139, 66%, 49%);
 }
 
 * {
@@ -57,17 +57,6 @@ main {
   background-color: var(--darker-green);
 }
 
-.dialog {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 30px;
-  border-radius: 5px;
-  border: 1px solid;
-  transform: translate(-50%, 50%);
-}
-
 .list {
   margin-top: 2em;
   list-style: circle;
@@ -77,4 +66,25 @@ main {
 .list__item {
   margin: 0.5em 0;
   text-transform: capitalize;
+}
+
+.dialog {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 30px;
+  border: 1px solid;
+  transform: translate(-50%, 50%);
+  animation: open-dialog 0.4s ease forwards;
+  overflow: hidden;
+}
+
+@keyframes open-dialog {
+  100% {
+    width: 100%;
+    border-radius: 10px;
+  }
 }
