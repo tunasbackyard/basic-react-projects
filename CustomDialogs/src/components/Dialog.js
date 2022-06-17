@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 
-const Dialog = ({ text, color, displayHandler }) => {
-  const [isVisible, setIsVisible] = displayHandler;
+const Dialog = ({ text, color, dispatch }) => {
   useEffect(() => {
     setTimeout(() => {
-      setIsVisible(!isVisible);
+      dispatch({ type: "HIDE_DIALOG" });
     }, 1000);
 
     return clearTimeout();
-  }, [isVisible]);
+  }, []);
 
   return (
     <dialog className="dialog" style={{ backgroundColor: color }} open>

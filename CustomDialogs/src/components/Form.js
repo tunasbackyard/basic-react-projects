@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useReducer } from "react";
 import Dialog from "./Dialog";
+import Reducer from "../Reducer";
+import InputField from "./InputField";
 
 const Form = ({ addPerson }) => {
-  const [personName, setPersonName] = useState();
-  const [isInputEmpty, setIsInputEmpty] = useState(false);
-  const [isAdded, setIsAdded] = useState(false);
+  const [state, dispatch] = useReducer(Reducer, {
+    personName: "",
+    isInputEmpty: false,
+    isAdded: false,
+  });
 
   return (
     <form
@@ -13,49 +17,21 @@ const Form = ({ addPerson }) => {
         e.preventDefault();
       }}
     >
-      {isInputEmpty && (
+      {state.isInputEmpty && (
         <Dialog
           text={"Name cannot blank"}
           color={"hsl(341deg 88% 46%)"}
-          displayHandler={[isInputEmpty, setIsInputEmpty]}
+          dispatch={dispatch}
         />
       )}
-      {isAdded && (
+      {state.isAdded && (
         <Dialog
           text={"Person successfully joined"}
           color={"hsl(134deg 29% 51%)"}
-          displayHandler={[isAdded, setIsAdded]}
+          dispatch={dispatch}
         />
       )}
-      <div className="form__input">
-        <input
-          className="form__input__field"
-          type="text"
-          value={personName}
-          onChange={(e) => {
-            setPersonName(e.target.value);
-          }}
-          placeholder="type a name"
-        />
-        <button
-          className="form__input__btn"
-          onClick={() => {
-            if (personName) {
-              setIsInputEmpty(false);
-              addPerson({
-                id: new Date().getTime().toString(),
-                name: personName,
-              });
-              setIsAdded(true);
-              setPersonName("");
-            } else {
-              setIsInputEmpty(true);
-            }
-          }}
-        >
-          Join
-        </button>
-      </div>
+      <InputField state={state} dispatch={dispatch} addPerson={addPerson} />
     </form>
   );
 };
