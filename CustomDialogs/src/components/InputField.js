@@ -1,6 +1,9 @@
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../App";
 
-const InputField = ({ state, dispatch, addPerson }) => {
+const InputField = ({ state, dispatch }) => {
+  const { addPerson } = useContext(Context);
   return (
     <div className="form__input">
       <input

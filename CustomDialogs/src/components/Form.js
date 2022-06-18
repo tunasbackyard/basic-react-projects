@@ -3,7 +3,7 @@ import Dialog from "./Dialog";
 import Reducer from "../Reducer";
 import InputField from "./InputField";
 
-const Form = ({ addPerson }) => {
+const Form = () => {
   const [state, dispatch] = useReducer(Reducer, {
     personName: "",
     isInputEmpty: false,
@@ -31,7 +31,7 @@ const Form = ({ addPerson }) => {
           dispatch={dispatch}
         />
       )}
-      <InputField state={state} dispatch={dispatch} addPerson={addPerson} />
+      <InputField state={state} dispatch={dispatch} />
     </form>
   );
 };
