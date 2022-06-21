@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Loading from "./Loader";
-import Tour from "./Tour";
+import Loader from "./components/Loader";
+import Tour from "./components/Tour";
 
 function App() {
   const url = "https://course-api.com/react-tours-project";
@@ -28,11 +28,11 @@ function App() {
     setTours(filteredTours);
   }
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loader />;
 
   return (
-    <section className="wrapper">
-      <h1>Tours</h1>
+    <section className="w-fit mx-auto max-w-screen-md text-slate-700 text-center">
+      <h1 className="mt-5 text-5xl font-bold">Tours</h1>
       {tours.map((tour) => {
         return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
       })}
