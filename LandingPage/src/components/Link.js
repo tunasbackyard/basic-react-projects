@@ -1,8 +1,19 @@
 import React from "react";
+import { useGlobalContext } from "../Context";
 
-const Link = ({ sublink }) => {
-  const { page, links } = sublink;
-  return <li className="mx-10 text-xl cursor-pointer capitalize">{page}</li>;
+const Link = ({ index, text }) => {
+  const { openSubmenu, setCurrentLinkIndex } = useGlobalContext();
+  return (
+    <li
+      className="mx-10 text-xl cursor-pointer capitalize"
+      onMouseOver={() => {
+        setCurrentLinkIndex(index);
+        openSubmenu();
+      }}
+    >
+      {text}
+    </li>
+  );
 };
 
 export default Link;
