@@ -1,22 +1,22 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Sidebar from "./components/Sidebar";
-
-import links from "./data";
-import { Context } from "./Context";
+import Submenu from "./components/Submenu";
+import { useGlobalContext } from "./Context";
 
 const App = () => {
+  const { sublinks, currentLinkIndex } = useGlobalContext();
+
   return (
-    <Context.Provider
-      value={{
-        links,
-      }}
-    >
+    <>
       <Navbar />
-      {/* <Sidebar /> */}
       <Hero />
-    </Context.Provider>
+      {sublinks.map(({ links }, index) => {
+        console.log(index, currentLinkIndex);
+        if (currentLinkIndex === index)
+          return <Submenu key={index} links={links} />;
+      })}
+    </>
   );
 };
 
