@@ -13,18 +13,20 @@ const Item = ({ color }) => {
   }, [isCopied]);
   return (
     <li
-      className="grid__item"
+      className="flex flex-col px-4 py-4 cursor-pointer w-60 h-32 text-black font-bold text-sm uppercase tracking-wider"
       style={{ backgroundColor: colorRgb, color: foregroundColor }}
       onClick={() => {
         navigator.clipboard.writeText(`#${color.hex}`);
         setIsCopied(true);
       }}
     >
-      <span className="item__text">%{color.weight}</span>
-      <span id="hex-code" className="item__text">
-        #{color.hex}
-      </span>
-      {isCopied && <span className="item__copy-msg">Copied to clipboard</span>}
+      <span>%{color.weight}</span>
+      <span id="hex-code">#{color.hex}</span>
+      {isCopied && (
+        <span className="w-full my-8 px-1 py-1 text-black bg-gray-100 text-center capitalize font-normal text-xs rounded-sm shadow-md">
+          Copied to clipboard
+        </span>
+      )}
     </li>
   );
 };

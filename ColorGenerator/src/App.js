@@ -20,10 +20,13 @@ const App = () => {
 
   return (
     <main>
-      <section className="wrapper">
-        <form className="input" onSubmit={handleSubmit}>
+      <section className="w-10/12 mx-auto my-4">
+        <form
+          className="flex flex-row justify-start items-center pb-1 mb-1 border-b-2"
+          onSubmit={handleSubmit}
+        >
           <input
-            className="input__field"
+            className="py-1 px-4 font-bold outline-none"
             type="text"
             name="color-code-input"
             value={hex}
@@ -31,9 +34,11 @@ const App = () => {
             style={isError ? { border: "2px solid red" } : null}
             placeholder={`#${base.hex}`}
           />
-          <button className="input__btn">Generate</button>
+          <button className="cursor-pointer px-2 rounded-sm text-white bg-blue-600 font-bold tracking-wide border-2 border-blue-600 ease-in duration-300 hover:text-blue-600 hover:bg-white">
+            Generate
+          </button>
         </form>
-        <ul className="grid">
+        <ul className="grid grid-cols-5">
           {colorArray.map((color, index) => (
             <Item key={index} color={color} />
           ))}
