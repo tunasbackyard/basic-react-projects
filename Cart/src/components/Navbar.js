@@ -1,7 +1,9 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
+import { useGlobalContext } from "../context";
 
 const Navbar = () => {
+  const { data } = useGlobalContext();
   return (
     <nav className="container flex justify-evenly py-4 bg-pink-400 text-2xl shadow-md">
       <h1 className="text-lime-100">
