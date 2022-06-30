@@ -1,6 +1,6 @@
 import React from "react";
 
-function Book({ imageLink, title, author }) {
+const Book = ({ imageLink, title, author }) => {
   return (
     <article className="mx-4 px-5 py-5 shadow-md rounded text-gray-500 bg-slate-200">
       <img className="w-52" src={imageLink} alt="book image" />
@@ -15,6 +15,6 @@ function Book({ imageLink, title, author }) {
       </div>
     </article>
   );
-}
+};
 
 export default Book;
