@@ -1,16 +1,11 @@
 import React from "react";
-import Book from "./Book";
-import data from "./data";
+import List from "./components/List";
 
 const App = () => {
   return (
     <section className="wrapper">
       <h1 className="title">Books 📚</h1>
-      <ul className="booklist">
-        {data.map((book) => {
-          return <Book key={book.id} {...book}></Book>;
-        })}
-      </ul>
+      <List />
     </section>
   );
 };
