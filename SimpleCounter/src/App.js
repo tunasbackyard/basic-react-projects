@@ -1,34 +1,14 @@
 import React from "react";
-import { useState } from "react";
-import Button from "./Button";
+import Container from "./components/Container";
+import Viewer from "./components/Viewer";
 
-function App() {
-  const [number, setNumber] = useState(0);
+const App = () => {
   return (
-    <div className="wrapper">
-      <h1 className="number">{number}</h1>
-      <div className="btn-container">
-        <Button
-          handler={() => {
-            setNumber(number + 1);
-          }}
-          text={"increase"}
-        />
-        <Button
-          handler={() => {
-            setNumber(number - 1);
-          }}
-          text={"decrease"}
-        />
-        <Button
-          handler={() => {
-            setNumber(0);
-          }}
-          text={"reset"}
-        />
-      </div>
-    </div>
+    <section className="wrapper">
+      <Viewer />
+      <Container />
+    </section>
   );
-}
+};
 
 export default App;
