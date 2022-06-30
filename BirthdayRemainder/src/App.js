@@ -6,7 +6,7 @@ import Button from "./components/Button";
 
 const App = () => {
   return (
-    <section>
+    <section className="flex flex-col justify-center items-center w-screen h-screen bg-indigo-300 text-gray-800">
       <List />
       <Button />
     </section>
