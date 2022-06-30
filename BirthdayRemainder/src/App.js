@@ -1,33 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 
-import Item from "./Item";
-import data from "./data";
+import List from "./components/List";
+import Button from "./components/Button";
 
-function App() {
-  const [array, setArray] = useState(data);
-
-  const clearList = () => {
-    setArray([]);
-  };
+const App = () => {
   return (
-    <section className="wrapper">
-      <h3>{array.length} birthdays today</h3>
-      {array.map((person) => {
-        return (
-          <Item
-            key={person.id}
-            name={person.name}
-            age={person.age}
-            img={person.img}
-          />
-        );
-      })}
-      <button className="btn" onClick={clearList}>
-        Clear All
-      </button>
+    <section>
+      <List />
+      <Button />
     </section>
   );
-}
+};
 
 export default App;

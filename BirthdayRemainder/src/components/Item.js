@@ -1,15 +1,15 @@
 import React from "react";
 
-function Item({ img, name, age }) {
+const Item = ({ img, name, age }) => {
   return (
-    <article className="item">
+    <li className="item">
       <img src={img} alt="person-image" />
       <div>
         <h4>{name}</h4>
         <p>{age} years</p>
       </div>
-    </article>
+    </li>
   );
-}
+};
 
 export default Item;
