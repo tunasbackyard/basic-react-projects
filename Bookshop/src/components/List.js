@@ -5,7 +5,7 @@ import Book from "./Book";
 const List = () => {
   const { data } = useGlobalContext();
   return (
-    <ul className="booklist">
+    <ul className="flex w-full justify-center">
       {data.map((book) => {
         return <Book key={book.id} {...book}></Book>;
       })}

@@ -3,10 +3,10 @@ import List from "./components/List";
 
 const App = () => {
   return (
-    <section className="wrapper">
-      <h1 className="title">Books 📚</h1>
+    <>
+      <h1 className="flex mx-auto my-10 w-fit font-bold text-3xl">Books 📚</h1>
       <List />
-    </section>
+    </>
   );
 };
 
