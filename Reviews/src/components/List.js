@@ -10,7 +10,7 @@ const List = () => {
   return (
     <ul>
       <Item {...data[currentIx]} />
-      <div>
+      <div className="flex w-fit mx-auto my-5">
         <Button icon={<FaAngleLeft />} handler={showPrev} />
         <Button icon={"Surprise Me"} handler={showRandom} />
         <Button icon={<FaAngleRight />} handler={showNext} />

@@ -1,7 +1,11 @@
 import React from "react";
 
 const Button = ({ icon, handler }) => {
-  return <button onClick={handler}>{icon}</button>;
+  return (
+    <button className="mx-1" onClick={handler}>
+      {icon}
+    </button>
+  );
 };
 
 export default Button;
