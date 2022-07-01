@@ -1,7 +1,7 @@
 import React from "react";
 import { FaQuoteRight } from "react-icons/fa";
 
-const Review = ({ id, name, job, image, text }) => {
+const Review = ({ name, job, image, text }) => {
   return (
     <article className="review">
       <div className="review__quote-icon-container">
