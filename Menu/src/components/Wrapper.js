@@ -7,8 +7,8 @@ const Wrapper = () => {
   const { categories } = useGlobalContext();
 
   return (
-    <section className="wrapper">
-      <div className="filters">
+    <section className="w-90 my-8 px-8">
+      <div className="my-4 mx-auto w-fit">
         {categories.map((category, index) => (
           <Filter key={index} filter={category} />
         ))}

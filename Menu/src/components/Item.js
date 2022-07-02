@@ -2,16 +2,20 @@ import React from "react";
 
 const Item = ({ title, price, img, desc }) => {
   return (
-    <article className="list__item">
-      <div className="item__img-container">
-        <img src={img} alt="food-image" />
+    <article className="flex items-start w-full my-2 px-4 py-4 shadow-md">
+      <div className="w-full">
+        <img
+          className="border-2 border-yellow-500 object-cover rounded w-[300px] h-[200px]"
+          src={img}
+          alt="food-image"
+        />
       </div>
-      <aside className="item__meta">
-        <div>
-          <h3 className="item__title">{title}</h3>
-          <span className="item__price">${price}</span>
+      <aside className="mx-8">
+        <div className="flex w-full justify-between capitalize my-8 pb-2 border-b-2 border-yellow-800">
+          <h3>{title}</h3>
+          <span className="text-2xl">${price}</span>
         </div>
-        <p className="item__info">{desc}</p>
+        <p>{desc}</p>
       </aside>
     </article>
   );
