@@ -3,8 +3,8 @@ import List from "./components/List";
 
 const App = () => {
   return (
-    <main>
-      <h2>FAQ</h2>
+    <main className="h-screen bg-slate-800 py-5 overflow-hidden text-slate-300">
+      <h2 className="w-fit mx-auto text-2xl font-semibold">FAQ</h2>
       <List />
     </main>
   );
