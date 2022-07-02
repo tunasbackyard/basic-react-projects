@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Filter from "./Filter";
 import List from "./List";
-import data from "./data";
+import data from "../data/data";
 
-const ListViewer = () => {
+const Wrapper = () => {
   const categories = ["all", ...new Set(data.map((item) => item.category))];
   const [filter, setFilter] = useState("all");
 
@@ -23,4 +23,4 @@ const ListViewer = () => {
   );
 };
 
-export default ListViewer;
+export default Wrapper;

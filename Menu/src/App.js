@@ -1,11 +1,11 @@
 import React from "react";
-import ListViewer from "./ListViewer";
+import Wrapper from "./components/Wrapper";
 
 const App = () => {
   return (
     <main>
       <h1>Menu</h1>
-      <ListViewer />
+      <Wrapper />
     </main>
   );
 };
