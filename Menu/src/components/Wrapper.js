@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import Filter from "./Filter";
 import List from "./List";
-import data from "../data/data";
+import { useGlobalContext } from "../context";
 
 const Wrapper = () => {
-  const categories = ["all", ...new Set(data.map((item) => item.category))];
-  const [filter, setFilter] = useState("all");
-
-  function changeFilter(category) {
-    setFilter(category);
-  }
+  const { categories } = useGlobalContext();
 
   return (
     <section className="wrapper">
       <div className="filters">
         {categories.map((category, index) => (
-          <Filter key={index} filter={category} changeFilter={changeFilter} />
+          <Filter key={index} filter={category} />
         ))}
       </div>
-      <List data={data} filter={filter} />
+      <List />
     </section>
   );
 };
