@@ -7,6 +7,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     isLoading: true,
+    isRemoved: false,
     data: [],
   });
 
@@ -22,8 +23,25 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "REMOVE_DATA", payload: { id } });
   }
 
+  function showAlert() {
+    dispatch({ type: "ALERT" });
+  }
+
+  function hideAlert() {
+    dispatch({ type: "HIDE_ALERT" });
+  }
+
   return (
-    <AppContext.Provider value={{ ...state, setData, stopLoading, removeData }}>
+    <AppContext.Provider
+      value={{
+        ...state,
+        setData,
+        stopLoading,
+        removeData,
+        showAlert,
+        hideAlert,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

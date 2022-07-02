@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useGlobalContext } from "../context";
 
 function Tour({ id, name, info, image, price, removeData }) {
   const [isClicked, setIsClicked] = useState(false);
+  const { showAlert } = useGlobalContext();
 
   return (
     <article className="flex flex-col items-center w-fit my-12 py-8 px-12 shadow-lg">
@@ -25,6 +27,7 @@ function Tour({ id, name, info, image, price, removeData }) {
         className="w-fit mt-8 py-2 px-8 cursor-pointer text-white bg-pink-600 rounded-2xl hover:bg-pink-700"
         onClick={() => {
           removeData(id);
+          showAlert();
         }}
       >
         Not interesting

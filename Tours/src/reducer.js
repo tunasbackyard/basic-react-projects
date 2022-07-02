@@ -10,6 +10,10 @@ const reducer = (state, action) => {
       );
       return { ...state, data: filteredData };
     }
+    case "ALERT":
+      return { ...state, isRemoved: true };
+    case "HIDE_ALERT":
+      return { ...state, isRemoved: false };
     default:
       throw new Error(`Unhandled action type '${action.type}'`);
   }

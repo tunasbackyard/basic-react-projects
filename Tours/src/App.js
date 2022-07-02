@@ -1,4 +1,5 @@
 import React from "react";
+import Alert from "./components/Alert";
 import Loader from "./components/Loader";
 import Tour from "./components/Tour";
 import { useGlobalContext } from "./context";
@@ -6,7 +7,7 @@ import useFetch from "./useFetch";
 
 const App = () => {
   const url = "https://course-api.com/react-tours-project";
-  const { isLoading, data, removeData } = useGlobalContext();
+  const { isLoading, isRemoved, data, removeData } = useGlobalContext();
 
   useFetch(url);
 
@@ -18,6 +19,7 @@ const App = () => {
       {data.map((tour) => {
         return <Tour key={tour.id} {...tour} removeData={removeData} />;
       })}
+      {isRemoved && <Alert text="Tour Removed" />}
     </section>
   );
 };
