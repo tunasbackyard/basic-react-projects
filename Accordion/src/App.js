@@ -1,11 +1,11 @@
 import React from "react";
-import Viewer from "./Viewer";
+import List from "./components/List";
 
 const App = () => {
   return (
     <main>
       <h2>FAQ</h2>
-      <Viewer />
+      <List />
     </main>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Container = ({ title, info }) => {
+const Item = ({ title, info }) => {
   const [isQuestionOpened, setIsQuestionOpened] = useState(false);
 
   return (
@@ -23,4 +23,4 @@ const Container = ({ title, info }) => {
   );
 };
 
-export default Container;
+export default Item;
