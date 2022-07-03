@@ -2,25 +2,15 @@ import React from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { useGlobalContext } from "../context";
 import Button from "./Button";
-import Item from "./Item";
+import Slide from "./Slide";
 
 const Slider = () => {
-  const { currentIx, data, isActiveSlide, isLastSlide, isEndOfTheSlide } =
-    useGlobalContext();
+  const { currentIx } = useGlobalContext();
 
   return (
-    <div className="wrapper">
+    <div className="flex flex-row items-baseline mt-20 overflow-hidden">
       <Button clickHandler={() => currentIx - 1} icon={<FiChevronLeft />} />
-      <div className="slider">
-        {data.map((item, itemIx) => {
-          let position = "nextSlide";
-          if (isActiveSlide(itemIx)) position = "activeSlide";
-
-          if (isLastSlide(itemIx) || isEndOfTheSlide(itemIx))
-            position = "lastSlide";
-          return <Item key={itemIx} {...item} position={position} />;
-        })}
-      </div>
+      <Slide />
       <Button clickHandler={() => currentIx + 1} icon={<FiChevronRight />} />
     </div>
   );

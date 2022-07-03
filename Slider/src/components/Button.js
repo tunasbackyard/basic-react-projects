@@ -5,7 +5,7 @@ const Button = ({ clickHandler, icon }) => {
   const { handleIndex } = useGlobalContext();
   return (
     <button
-      className="btn"
+      className="cursor-pointer text-3xl hover:text-gray-500 z-10"
       onClick={() => {
         handleIndex(clickHandler);
       }}
