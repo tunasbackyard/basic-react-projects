@@ -3,14 +3,15 @@ import "./index.css";
 import { useGlobalContext } from "./context";
 
 import List from "./components/List";
+import Loading from "./components/Loading";
 
 const App = () => {
   const { isLoading } = useGlobalContext();
 
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading) return <Loading />;
   return (
-    <main>
-      <h1>Experience</h1>
+    <main className="flex flex-col justify-start items-center bg-slate-800 text-slate-100 h-screen w-screen">
+      <h1 className="text-3xl font-bold my-10">Experience</h1>
       <List />
     </main>
   );
